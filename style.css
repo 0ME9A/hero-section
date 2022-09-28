@@ -2,25 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
     color: white;
     transition: .3s;
+    font-size: 16px;
+    text-decoration: none !important;
+}
+body{
+    overflow: hidden;
 }
 a{
     color: white;
 }
-.background-img{
+picture{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: fixed;
 }
 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.5);
-    object-position: -300px -300px;
 }
 nav{
     width: 100%;
@@ -32,20 +36,21 @@ nav{
     padding: 0 10%;
     justify-content: space-between;
     align-items: center;
-    z-index: 5;
+    z-index: 55;
 }
 nav a{
-    font-size: 36px;
+    font-size: 3rem;
     font-weight: 600;
 }
 ul{
     list-style: none;
     display: flex;
+    gap: 3rem;
 }
+
 li a{
-    font-size: 16px;
+    font-size: 1.4rem;
     font-weight: 100;
-    padding-left: 80px;
 }
 li:nth-child(1) a{
     font-weight: bolder;
@@ -78,27 +83,115 @@ li a:hover{
     margin-top: 200px;
 }
 .text-container h1{
-    font-size: 90px;
+    font-size: 7rem;
     text-transform: uppercase;
     font-weight: bolder;
     color: #4C5759;
 }
 .text-container p{
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: lighter;
     color: rgba(255, 255, 255, .75);
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+    text-transform: none;
+    padding-left: 25%;
 }
 button{
-    padding: 10px 50px;
+    padding: 1rem 2.5rem;
     border: none;
     background-color: maroon;
     color: white;
     margin-top: 30px;
     font-weight: lighter;
-    font-size: 18px;
+    font-size: 1.5rem;
     border: 1px solid maroon;
+    cursor: pointer;
+    border-radius: .5rem;
 }
 button:hover{
     border: 1px solid rgb(255, 255, 255);
     background-color: transparent;
+}
+.menu-toggler{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: none;
+    transform: scale(.8);
+    cursor: pointer;
+}
+.active span, .disable span{
+    width: 45px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+.disable span{
+    transform-origin: center;
+    position: absolute;
+}
+.disable span:nth-child(2){
+    display: none;
+}
+.disable span:nth-child(1){
+    transform: rotate(45deg);
+}
+.disable span:nth-child(3){
+    transform: rotate(-45deg);
+}
+menu{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 100%;
+    background-color: #4C5759;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+}
+menu ul{
+    flex-direction: column;
+}
+menu ul li{
+    text-align: center;
+}
+
+menu ul li a{
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .nav-links{
+        display: none;
+    }
+    .menu-toggler{
+        display: flex;
+    }
+    .home-page-text h1{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 12px;
+    }
+    nav{
+        padding: 0 5%;
+    }
+    .home-page-text{
+        width: 90%;
+    }
+    .home-page-text p{
+        padding-left: 0;
+    }
 }

@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;900&display=swap" rel="stylesheet">
+    <title>Heros</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
 </head>
+
 <body>
-    <div class="background-img">
-        <img src="img/background_img.jpg" alt="background-img">
-    </div>
+    <picture class="background-img">
+        <source media="(max-width: 1200px)" srcset="img/back600.jpg">
+        <img src="img/background.jpg" alt="background-img">
+    </picture>
+
     <nav>
-        <a href="#">omega</a>
-        <ul>
+        <a href="#" id="brand">omega</a>
+        <div class="menu-toggler active ">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links">
             <li><a href="#">home</a></li>
             <li><a href="#">blog</a></li>
             <li><a href="#">projects</a></li>
@@ -21,14 +32,26 @@
             <li><a href="#">contact</a></li>
         </ul>
     </nav>
+    <menu>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">projects</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </menu>
     <div class="home-page-content">
         <div class="home-page-text">
             <div class="text-container">
-                <h1>the design from figma</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et quidem delectus <br> debitis sunt beatae distinctio praesentium, accusamus similique,  tenetur repudiandae sed ducimus molestiae <br>repellendus laudantium sit dignissimos consequatur iusto.</p>
+                <h1 id="intro-title">the design from figma</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et quidem delectus debitis
+                    sunt beatae distinctio praesentium, accusamus similique, tenetur.repellendus laudantium sit
+                    dignissimos consequatur iusto intro-titleconsequatur.</p>
                 <button>continue</button>
             </div>
         </div>
     </div>
 </body>
+
 </html>
